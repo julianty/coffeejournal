@@ -103,14 +103,16 @@ function NavigationBar() {
 }
 
 function SignInDialog() {
-  const { user, setUser } = React.useContext(UserContext);
+  const { setUser } = React.useContext(UserContext);
   const demoUser = {
     username: "demoUser",
     email: "address@example.com",
   };
   return (
     <Dialog>
-      <DialogTrigger>Sign In</DialogTrigger>
+      <DialogTrigger>
+        <Button>Sign In</Button>
+      </DialogTrigger>
       <DialogContent>
         <DialogTitle>Sign In</DialogTitle>
         <DialogDescription>This is a sign in dialog</DialogDescription>
