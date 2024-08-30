@@ -53,8 +53,8 @@ export default function DiscoverRoastersSection({
     <section className={cn([sectionStyle, "flex flex-col gap-8"])}>
       <h2 className="text-4xl font-bold">Some Roasters You Might like</h2>
       <div className="flex flex-col flex-wrap sm:flex-row gap-8">
-        {RoasterCatalog.map((coffeeBean) => (
-          <RoasterCard {...coffeeBean} />
+        {RoasterCatalog.map((roasterProfile) => (
+          <RoasterCard key={roasterProfile.companyName} {...roasterProfile} />
         ))}
       </div>
     </section>

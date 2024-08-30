@@ -46,7 +46,7 @@ export default function DiscoverBeansSection({ sectionStyle }: SectionProps) {
       <h2 className="text-4xl font-bold">Discover New Beans</h2>
       <div className="flex flex-col flex-wrap sm:flex-row gap-8">
         {CoffeeBeanCatalog.map((coffeeBean) => (
-          <CoffeeBeanItem {...coffeeBean} />
+          <CoffeeBeanItem key={coffeeBean.name} {...coffeeBean} />
         ))}
       </div>
     </section>
