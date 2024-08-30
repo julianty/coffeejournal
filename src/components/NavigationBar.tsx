@@ -39,7 +39,7 @@ function SignInDialog() {
   };
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger asChild>
         <Button>Sign In</Button>
       </DialogTrigger>
       <DialogContent>
