@@ -11,7 +11,7 @@ type CoffeeBean = {
   roaster: string;
   price?: number;
   weight?: number;
-  roast?: ["light" | "medium" | "dark"];
+  roast?: "light" | "medium" | "dark";
   flavorNotes?: string[];
 };
 
