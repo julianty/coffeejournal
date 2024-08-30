@@ -1,28 +1,29 @@
 import { useState } from "react";
 import "./App.css";
 import DiscoverBeansSection from "./components/DiscoverBeansSection";
+import DiscoverRoastersSection from "./components/DiscoverRoastersSection";
 import HeroSection from "./components/HeroSection";
 import NavigationBar from "./components/NavigationBar";
 import UserContext from "./components/UserContextProvider";
 import UserProfile from "./components/UserProfile";
 import { User } from "./types";
-const sectionStyle = "mx-0 md:max-w-5xl md:mx-auto p-8 bg-stone-700";
+// const sectionStyle = "mx-0 md:max-w-5xl md:mx-auto p-8 bg-stone-700";
+const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-8 my-0 md:my-12";
 
 function App() {
   const [user, setUser] = useState<User | undefined>(undefined);
 
   return (
-    <>
-      <UserContext.Provider value={{ user, setUser }}>
-        <NavigationBar />
-        {user ? (
-          <UserProfile sectionStyle={sectionStyle} />
-        ) : (
-          <HeroSection sectionStyle={sectionStyle} />
-        )}
-        <DiscoverBeansSection sectionStyle={sectionStyle} />
-      </UserContext.Provider>
-    </>
+    <UserContext.Provider value={{ user, setUser }}>
+      <NavigationBar />
+      {user ? (
+        <UserProfile sectionStyle={sectionStyle} />
+      ) : (
+        <HeroSection sectionStyle={sectionStyle} />
+      )}
+      <DiscoverBeansSection sectionStyle={sectionStyle} />
+      <DiscoverRoastersSection sectionStyle={sectionStyle} />
+    </UserContext.Provider>
   );
 }
 

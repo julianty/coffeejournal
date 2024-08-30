@@ -57,7 +57,7 @@ function SignInDialog() {
 export default function NavigationBar() {
   const { user, setUser } = React.useContext(UserContext);
   return (
-    <div className="navigation flex mx-auto md:max-w-5xl justify-between bg-stone-800 p-4">
+    <div className="navigation w-full flex mx-auto md:max-w-5xl justify-between bg-stone-800 p-4">
       <Logo />
       {user?.username ? (
         <Button onClick={() => setUser?.(undefined)}>Sign Out</Button>

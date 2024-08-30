@@ -1,21 +1,33 @@
 type User = {
   username: string;
   email: string;
+  followers?: number;
+  coffeeBeans?: CoffeeBean[];
 };
-type CoffeeBeanItemProps = {
+
+type CoffeeBean = {
   name: string;
-  image?: string;
   origin: string;
   roaster: string;
-  AvgUserRating?: number;
   price?: number;
   weight?: number;
   roast?: ["light" | "medium" | "dark"];
   flavorNotes?: string[];
 };
 
+type CoffeeBeanItemProps = {
+  image?: string;
+  AvgUserRating?: number;
+} & CoffeeBean;
+
 type SectionProps = {
   sectionStyle: string;
 };
 
-export type { CoffeeBeanItemProps, SectionProps, User };
+type Roaster = {
+  companyName: string;
+  location: string;
+  image: string;
+};
+
+export type { CoffeeBean, CoffeeBeanItemProps, Roaster, SectionProps, User };

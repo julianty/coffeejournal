@@ -35,7 +35,8 @@
     /* --background: 222.2 84% 4.9%; */
     --background: 20 14% 4%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    /* --card: 222.2 84% 4.9%; */
+    --card: 20 14% 4%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
@@ -67,4 +68,20 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+h2 {
+  @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+h4 {
+  @apply scroll-m-20 text-lg font-semibold;
+}
+
+.origin {
+  @apply scroll-m-20 italic text-sm;
 }

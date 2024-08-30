@@ -1,35 +1,42 @@
 import { cn } from "@/lib/utils";
 import { CoffeeBeanItemProps, SectionProps } from "@/types";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 
 const CoffeeBeanCatalog = [
   {
-    name: "Coffee 1",
+    name: "Yirgacheffe",
     origin: "Ethiopia",
-    roaster: "Roaster 1",
+    roaster: "Old Town Roasters",
   },
   {
-    name: "Coffee 2",
+    name: "Winter Kenya Blend",
     origin: "Kenya",
-    roaster: "Roaster 2",
+    roaster: "Pike Place Roasters",
   },
   {
-    name: "Coffee 3",
+    name: "Pantano",
     origin: "Brazil",
-    roaster: "Roaster 3",
+    roaster: "Dreamland Roasters",
   },
 ];
 function CoffeeBeanItem({ name, origin, roaster }: CoffeeBeanItemProps) {
   return (
     <Card>
       <CardHeader>
-        <div className="w-36 h-36 bg-stone-800 flex justify-center items-center"></div>
+        {/* <div className="w-36 h-36 bg-stone-800 flex justify-center items-center"></div> */}
+        <h4>{name}</h4>
+        <p className="origin">{`Origin: ${origin}`}</p>
       </CardHeader>
       <CardContent>
-        <h4>{name}</h4>
-        <p>{origin}</p>
-        <p>{roaster}</p>
+        <img
+          src="/pexels-polina-tankilevitch-4109743.jpg"
+          alt="coffee bean"
+          className="w-36 h-36 bg-stone-800 flex justify-center items-center object-cover rounded-md"
+        ></img>
       </CardContent>
+      <CardFooter>
+        <p className="text-muted-foreground">{roaster}</p>
+      </CardFooter>
     </Card>
   );
 }
