@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AddBeanForm from "./components/AddBeanForm";
 import DiscoverBeansSection from "./components/DiscoverBeansSection";
 import DiscoverRoastersSection from "./components/DiscoverRoastersSection";
 import HeroSection from "./components/HeroSection";
@@ -17,7 +18,12 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <NavigationBar />
       {user ? (
-        <UserProfile sectionStyle={sectionStyle} />
+        <>
+          <UserProfile sectionStyle={sectionStyle} />
+          <section className={sectionStyle}>
+            <AddBeanForm />
+          </section>
+        </>
       ) : (
         <HeroSection sectionStyle={sectionStyle} />
       )}
