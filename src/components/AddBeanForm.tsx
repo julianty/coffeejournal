@@ -1,11 +1,21 @@
-import { CoffeeBean } from "@/types";
+import { CoffeeBean, Roast } from "@/types";
 import { useForm } from "react-hook-form";
 import { Button } from "./ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
 import { Input } from "./ui/input";
 import { InputTags } from "./ui/inputtags";
-
-export default function AddBeanForm() {
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+export default function AddBeanForm({
+  setBeanCatalog,
+}: {
+  setBeanCatalog: React.Dispatch<React.SetStateAction<CoffeeBean[]>>;
+}) {
   const form = useForm({
     defaultValues: {
       name: "",
@@ -13,18 +23,13 @@ export default function AddBeanForm() {
       roaster: "",
       price: 0,
       weight: 0,
-      roast: "light" as const,
+      roast: Roast.Light,
       flavorNotes: [],
     },
   });
 
   function handleSubmit(data: CoffeeBean) {
-    if (data.price === 0) {
-      data.price = undefined;
-    }
-    if (data.weight === 0) {
-      data.weight = undefined;
-    }
+    setBeanCatalog((prev) => [...prev, data]);
     console.log("Form submitted");
     console.log(data);
   }
@@ -47,6 +52,27 @@ export default function AddBeanForm() {
             </FormItem>
           )}
         ></FormField>
+        <FormField
+          control={form.control}
+          name="roast"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Roast Level</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a roast level" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value={Roast.Light}>Light</SelectItem>
+                  <SelectItem value={Roast.Medium}>Medium</SelectItem>
+                  <SelectItem value={Roast.Dark}>Dark</SelectItem>
+                </SelectContent>
+              </Select>
+            </FormItem>
+          )}
+        />
         <FormField
           control={form.control}
           name="origin"
