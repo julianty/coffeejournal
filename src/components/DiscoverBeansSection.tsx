@@ -1,25 +1,18 @@
 import { cn } from "@/lib/utils";
-import { CoffeeBeanItemProps, SectionProps } from "@/types";
-import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
-
-const CoffeeBeanCatalog = [
-  {
-    name: "Yirgacheffe",
-    origin: "Ethiopia",
-    roaster: "Old Town Roasters",
-  },
-  {
-    name: "Winter Kenya Blend",
-    origin: "Kenya",
-    roaster: "Pike Place Roasters",
-  },
-  {
-    name: "Pantano",
-    origin: "Brazil",
-    roaster: "Dreamland Roasters",
-  },
-];
-function CoffeeBeanItem({ name, origin, roaster }: CoffeeBeanItemProps) {
+import {
+  CoffeeBean,
+  CoffeeBeanItemProps,
+  DiscoverBeansSectionProps,
+} from "@/types";
+import { Card, CardContent, CardHeader } from "./ui/card";
+function CoffeeBeanItem({
+  name,
+  origin,
+  roaster,
+  price,
+  roast,
+  flavorNotes,
+}: CoffeeBeanItemProps) {
   return (
     <Card>
       <CardHeader>
@@ -31,21 +24,31 @@ function CoffeeBeanItem({ name, origin, roaster }: CoffeeBeanItemProps) {
         <img
           src="/pexels-polina-tankilevitch-4109743.jpg"
           alt="coffee bean"
-          className="w-36 h-36 bg-stone-800 flex justify-center items-center object-cover rounded-md"
+          className="w-40 h-36 bg-stone-800 flex mx-auto mb-3 object-cover rounded-md"
         ></img>
-      </CardContent>
-      <CardFooter>
+        <div className="flex justify-between">
+          <p>{roast}</p>
+          <p className="price">{`$${price}`}</p>
+        </div>
+        <ul className="flex gap-2">
+          {flavorNotes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+        </ul>
         <p className="text-muted-foreground">{roaster}</p>
-      </CardFooter>
+      </CardContent>
     </Card>
   );
 }
-export default function DiscoverBeansSection({ sectionStyle }: SectionProps) {
+export default function DiscoverBeansSection({
+  sectionStyle,
+  catalog,
+}: DiscoverBeansSectionProps) {
   return (
     <section className={cn([sectionStyle, "flex flex-col gap-8"])}>
       <h2 className="text-4xl font-bold">Discover New Beans</h2>
       <div className="flex flex-col flex-wrap sm:flex-row gap-8">
-        {CoffeeBeanCatalog.map((coffeeBean) => (
+        {catalog.map((coffeeBean: CoffeeBean) => (
           <CoffeeBeanItem key={coffeeBean.name} {...coffeeBean} />
         ))}
       </div>

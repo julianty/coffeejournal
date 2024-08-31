@@ -4,15 +4,19 @@ type User = {
   followers?: number;
   coffeeBeans?: CoffeeBean[];
 };
-
+export enum Roast {
+  Light = "Light",
+  Medium = "Medium",
+  Dark = "Dark",
+}
 type CoffeeBean = {
   name: string;
   origin: string;
   roaster: string;
-  price?: number;
-  weight?: number;
-  roast?: "light" | "medium" | "dark";
-  flavorNotes?: string[];
+  price: number;
+  weight: number;
+  roast: Roast;
+  flavorNotes: string[];
 };
 
 type CoffeeBeanItemProps = {
@@ -24,10 +28,20 @@ type SectionProps = {
   sectionStyle: string;
 };
 
+type DiscoverBeansSectionProps = {
+  catalog: CoffeeBean[];
+} & SectionProps;
 type Roaster = {
   companyName: string;
   location: string;
   image: string;
 };
 
-export type { CoffeeBean, CoffeeBeanItemProps, Roaster, SectionProps, User };
+export type {
+  CoffeeBean,
+  CoffeeBeanItemProps,
+  DiscoverBeansSectionProps,
+  Roaster,
+  SectionProps,
+  User,
+};

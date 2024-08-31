@@ -85,3 +85,7 @@ h4 {
 .origin {
   @apply scroll-m-20 italic text-sm;
 }
+
+.price {
+  @apply scroll-m-20;
+}
