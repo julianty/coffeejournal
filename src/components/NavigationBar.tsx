@@ -22,7 +22,7 @@ function Logo() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
             Coffee Journal
           </NavigationMenuLink>
         </NavigationMenuItem>
