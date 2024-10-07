@@ -1,27 +1,27 @@
 import { cn } from "@/lib/utils";
 import { SectionProps } from "@/types";
 import { Card, CardContent, CardHeader } from "./ui/card";
-
 const RoasterCatalog = [
   {
     companyName: "Pike Place Roasters",
     location: "Seattle, WA",
-    image: "https://via.placeholder.com/150",
+    // image: "https://via.placeholder.com/150",
+    image: "battlecreek-coffee-roasters-mpGD-ie1jZQ-unsplash.jpg",
   },
   {
     companyName: "Allegro Coffee",
     location: "Boulder, CO",
-    image: "https://via.placeholder.com/150",
+    image: "battlecreek-coffee-roasters-NfG4rXmceFM-unsplash.jpg",
   },
   {
     companyName: "Old Town Roasters",
     location: "San Diego, CA",
-    image: "https://via.placeholder.com/150",
+    image: "daniel-l-_OqcrFI5370-unsplash.jpg",
   },
   {
     companyName: "Dreamland Roasters",
     location: "Portland, OR",
-    image: "https://via.placeholder.com/150",
+    image: "george-kroeker-2UXoXOhMYQE-unsplash.jpg",
   },
 ];
 function RoasterCard({
@@ -36,12 +36,16 @@ function RoasterCard({
   return (
     <Card>
       <CardHeader>
-        <div className="w-36 h-36 bg-stone-800 flex justify-center items-center"></div>
+        {/* <div className="w-36 h-36 bg-stone-800 flex justify-center items-center"></div> */}
+        <img
+          src={image}
+          alt="roaster logo"
+          className="w-48 h-48 bg-stone-800 flex justify-center items-center overflow-hidden object-cover"
+        ></img>
       </CardHeader>
       <CardContent>
         <h4>{companyName}</h4>
         <p>{location}</p>
-        <p>{image}</p>
       </CardContent>
     </Card>
   );
