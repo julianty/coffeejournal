@@ -6,6 +6,7 @@ import DiscoverBeansSection from "./components/DiscoverBeansSection";
 import DiscoverRoastersSection from "./components/DiscoverRoastersSection";
 import HeroSection from "./components/HeroSection";
 import NavigationBar from "./components/NavigationBar";
+import UserBeansSection from "./components/UserBeansSection";
 import UserContext from "./components/UserContextProvider";
 import UserProfile from "./components/UserProfile";
 import { User } from "./types";
@@ -21,8 +22,12 @@ function App() {
       {user ? (
         <>
           <UserProfile sectionStyle={sectionStyle} />
-          <section className={sectionStyle}>
-            <AddBeanForm setBeanCatalog={setCurrentBeanCatalog} />
+          <section className={`${sectionStyle} flex gap-8`}>
+            <UserBeansSection beans={user.coffeeBeans} />
+            <div>
+              <h2>Add A New Bean</h2>
+              <AddBeanForm setBeanCatalog={setCurrentBeanCatalog} />
+            </div>
           </section>
         </>
       ) : (
