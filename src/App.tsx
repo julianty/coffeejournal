@@ -11,7 +11,7 @@ import UserContext from "./components/UserContextProvider";
 import UserProfile from "./components/UserProfile";
 import { User } from "./types";
 // const sectionStyle = "mx-0 md:max-w-5xl md:mx-auto p-8 bg-stone-700";
-const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-8 my-0 md:my-12";
+const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-8 my-0 md:my-24";
 function App() {
   const [user, setUser] = useState<User | undefined>(undefined);
   const [currentBeanCatalog, setCurrentBeanCatalog] = useState(beanCatalog);
