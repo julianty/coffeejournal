@@ -1,35 +1,7 @@
-import { CoffeeBean, Roast } from "@/types";
-import { Card, CardContent, CardHeader } from "./ui/card";
-export default function UserBeansSection() {
-  const beans = [
-    {
-      name: "Letty Bermuzdez Geisha",
-      origin: "Colombia",
-      roaster: "Lightsail Coffee Roasters",
-      price: 20,
-      weight: 12,
-      roast: Roast.Light,
-      flavorNotes: ["chocolate", "nutty"],
-    },
-    {
-      name: "Hacienda Blend",
-      origin: "Brazil",
-      roaster: "Highland Coffee",
-      price: 25,
-      weight: 12,
-      roast: Roast.Medium,
-      flavorNotes: ["fruity", "nutty"],
-    },
-    {
-      name: "Kirinyaga Peaberry",
-      origin: "Kenya",
-      roaster: "Black Sheep Roasters",
-      price: 30,
-      weight: 12,
-      roast: Roast.Dark,
-      flavorNotes: ["spicy", "nutty"],
-    },
-  ];
+import { CoffeeBean } from "@/types";
+// import CoffeeBeanBag from "caleb-minear-kVAs4SVIxSk-unsplash.jpg";
+import { Card, CardContent } from "./ui/card";
+export default function UserBeansSection({ beans }: { beans: CoffeeBean[] }) {
   return (
     <div>
       <h2>Your Coffee Beans</h2>
@@ -46,26 +18,58 @@ export default function UserBeansSection() {
 
 function BeanCard({ bean }: { bean: CoffeeBean }) {
   return (
-    <Card>
-      <CardHeader className="flex flex-row justify-between items-center">
-        <div>
-          <p className="text-lg">{`${bean.name}, ${bean.origin}`}</p>
-        </div>
-        <div>{`$${bean.price}/${bean.weight}oz`}</div>
-      </CardHeader>
-      <CardContent className="flex justify-between gap-3">
-        <div>
-          <p className="text-sm">{bean.roaster}</p>
-          <p className="text-sm">{bean.roast}</p>
-        </div>
-        <ul className="flex gap-2">
-          {bean.flavorNotes.map((note: string) => (
-            <li key={note} className="text-sm">
-              {note}
-            </li>
-          ))}
-        </ul>
-      </CardContent>
+    <Card className="flex p-2">
+      <div className="w-24 h-24">
+        <img
+          className="w-full h-full object-cover"
+          src="caleb-minear-kVAs4SVIxSk-unsplash.jpg"
+        ></img>
+      </div>
+      <div className="flex-grow">
+        <CardContent className="h-full px-4 py-0 flex flex-col justify-between">
+          <div className="mb-auto">
+            <p className="font-semibold text-lg">{bean.name}</p>
+          </div>
+          <div>
+            <p
+              className="text-sm"
+              style={{ color: "hsl(var(--muted-foreground))" }}
+            >
+              {bean.origin}
+            </p>
+            <div className="flex justify-between items-center">
+              <p className="text-xs">{bean.roaster}</p>
+              <div className="font-semibold text-md">{`$${bean.price}/${bean.weight}oz`}</div>
+            </div>
+          </div>
+        </CardContent>
+      </div>
     </Card>
   );
 }
+
+// function BeanCard({ bean }: { bean: CoffeeBean }) {
+//   return (
+//     <Card>
+//       <CardHeader className="flex flex-row justify-between items-center">
+//         <div>
+//           <p className="text-lg">{`${bean.name}, ${bean.origin}`}</p>
+//         </div>
+//         <div>{`$${bean.price}/${bean.weight}oz`}</div>
+//       </CardHeader>
+//       <CardContent className="flex justify-between gap-3">
+//         <div>
+//           <p className="text-sm">{bean.roaster}</p>
+//           <p className="text-sm">{bean.roast}</p>
+//         </div>
+//         <ul className="flex gap-2">
+//           {bean.flavorNotes.map((note: string) => (
+//             <li key={note} className="text-sm">
+//               {note}
+//             </li>
+//           ))}
+//         </ul>
+//       </CardContent>
+//     </Card>
+//   );
+// }
