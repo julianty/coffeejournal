@@ -10,7 +10,7 @@ import UserContext from "./components/UserContextProvider";
 import UserProfile from "./components/UserProfile";
 import { User } from "./types";
 // const sectionStyle = "mx-0 md:max-w-5xl md:mx-auto p-8 bg-stone-700";
-const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-8 my-0 md:my-24";
+const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-4 my-0 md:my-24";
 function App() {
   const [user, setUser] = useState<User | undefined>(undefined);
   const [currentBeanCatalog, setCurrentBeanCatalog] = useState(beanCatalog);
@@ -23,7 +23,7 @@ function App() {
           <>
             <UserProfile sectionStyle={sectionStyle} />
             <section className={`${sectionStyle} flex flex-col gap-8`}>
-              <UserBeansSection beans={user.coffeeBeans} />
+              <UserBeansSection beans={currentBeanCatalog} />
               <div>
                 <h2>Add A New Bean</h2>
                 <AddBeanForm setBeanCatalog={setCurrentBeanCatalog} />
