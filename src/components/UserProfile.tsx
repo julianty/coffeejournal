@@ -11,9 +11,7 @@ export default function UserProfile({ sectionStyle }: SectionProps) {
         "flex flex-col sm:flex-row gap-8 justify-center",
       ])}
     >
-      {/* <div className="w-36 h-36 bg-stone-800 flex justify-center items-center"></div> */}
       <img
-        // src={WomanDrinkingCoffe}
         id="profile-picture"
         src="/pexels-olly-3790797.jpg"
         alt="profile picture"
@@ -25,9 +23,6 @@ export default function UserProfile({ sectionStyle }: SectionProps) {
         <p>Followers: 5</p>
         <div className="flex items-center gap-4">
           Following:
-          {/* <div className="w-12 h-12 rounded-full bg-stone-800"></div>
-          <div className="w-12 h-12 rounded-full bg-stone-800"></div>
-          <div className="w-12 h-12 rounded-full bg-stone-800"></div> */}
           <MiniProfilePicture
             src="/pexels-anastasia-shuraeva-6608313.jpg"
             alt="following-1"
