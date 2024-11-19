@@ -22,7 +22,7 @@ function App() {
         {user ? (
           <>
             <UserProfile sectionStyle={sectionStyle} />
-            <section className={`${sectionStyle} flex gap-8`}>
+            <section className={`${sectionStyle} flex flex-col gap-8`}>
               <UserBeansSection beans={user.coffeeBeans} />
               <div>
                 <h2>Add A New Bean</h2>

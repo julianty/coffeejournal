@@ -31,7 +31,7 @@ export default function UserBeansSection() {
     },
   ];
   return (
-    <div className="w-1/2">
+    <div>
       <h2>Your Coffee Beans</h2>
       <ul className="flex flex-col gap-4">
         {beans.map((bean: CoffeeBean) => (
