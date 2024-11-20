@@ -18,7 +18,7 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <NavigationBar />
-      <div className="flex flex-col items-center justify-center gap-12">
+      <div className="flex flex-col items-center justify-center gap-24">
         {user ? (
           <>
             <UserProfile sectionStyle={sectionStyle} />
@@ -64,7 +64,10 @@ function FeaturesSection({ sectionStyle }: { sectionStyle: string }) {
     );
   }
   return (
-    <section className={`${sectionStyle} bg-slate-800`}>
+    <section
+      className={`${sectionStyle}`}
+      style={{ backgroundColor: "hsl(var(--accent-foreground))" }}
+    >
       <div className="flex flex-col gap-8">
         {feature(
           <IconSparkles />,
