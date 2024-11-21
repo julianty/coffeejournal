@@ -3,7 +3,7 @@ import { CoffeeBean } from "@/types";
 import { Card, CardContent } from "./ui/card";
 export default function UserBeansSection({ beans }: { beans: CoffeeBean[] }) {
   return (
-    <div>
+    <div className="md:w-1/2">
       <h2>Your Coffee Beans</h2>
       <ul className="flex flex-col gap-4">
         {beans.map((bean: CoffeeBean) => (
