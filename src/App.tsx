@@ -18,11 +18,14 @@ function App() {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <NavigationBar />
-      <div className="flex flex-col items-center justify-center gap-24">
+      <div className="flex flex-col items-center justify-center gap-24 md:gap-0">
+        {/* Display the user page if the user is logged in */}
         {user ? (
           <>
             <UserProfile sectionStyle={sectionStyle} />
-            <section className={`${sectionStyle} flex flex-col gap-8`}>
+            <section
+              className={`${sectionStyle} flex flex-col md:flex-row gap-8`}
+            >
               <UserBeansSection beans={currentBeanCatalog} />
               <div>
                 <h2>Add A New Bean</h2>
@@ -31,17 +34,13 @@ function App() {
             </section>
           </>
         ) : (
+          // Display the landing page if the user is not logged in
           <>
             <HeroSection sectionStyle={sectionStyle} />
             <FeaturesSection sectionStyle={sectionStyle} />
             <FrequentAskedQuestionsSection sectionStyle={sectionStyle} />
           </>
         )}
-        {/* <DiscoverBeansSection
-          sectionStyle={sectionStyle}
-          catalog={currentBeanCatalog}
-        />
-        <DiscoverRoastersSection sectionStyle={sectionStyle} /> */}
       </div>
     </UserContext.Provider>
   );
@@ -108,7 +107,9 @@ function FrequentAskedQuestionsSection({
   return (
     <section className={`${sectionStyle}`}>
       <h2>Frequently Asked Questions</h2>
-      <p> Can't find the answer you're looking for? Contact us.</p>
+      <p>
+        Can't find the answer you're looking for? <a href="#">Contact us.</a>
+      </p>
       <div className="flex flex-col gap-8 mt-4">
         {question(
           "Is the service free to use?",
