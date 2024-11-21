@@ -4,9 +4,7 @@ import { Button } from "./ui/button";
 
 export default function HeroSection({ sectionStyle }: SectionProps) {
   return (
-    <section
-      className={cn([sectionStyle, "flex flex-col sm:flex-row gap-12 mt-24"])}
-    >
+    <section className={cn([sectionStyle, "flex flex-col gap-12 mt-24"])}>
       <div className="flex flex-col gap-8">
         <h1 className="text-5xl font-bold">Welcome to Coffee Journal</h1>
         <p className="text-lg mt-4">
