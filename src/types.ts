@@ -17,6 +17,7 @@ type CoffeeBean = {
   weight: number;
   roast: Roast;
   flavorNotes: string[];
+  img?: string;
 };
 
 type CoffeeBeanItemProps = {

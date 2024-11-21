@@ -39,7 +39,7 @@ function BeanCard({ bean }: { bean: CoffeeBean }) {
       <div className="w-24 h-24">
         <img
           className="w-full h-full object-cover"
-          src="caleb-minear-kVAs4SVIxSk-unsplash.jpg"
+          src={bean.img ? bean.img : "caleb-minear-kVAs4SVIxSk-unsplash.jpg"}
         ></img>
       </div>
       <div className="flex-grow">

@@ -9,6 +9,7 @@ export default [
     weight: 250,
     roast: Roast.Medium,
     flavorNotes: ["blueberry", "citrus", "floral"],
+    img: "pexels-interwebly-18138946.jpg",
   },
   {
     name: "Winter Kenya Blend",
@@ -18,6 +19,7 @@ export default [
     weight: 250,
     roast: Roast.Light,
     flavorNotes: ["black currant", "cocoa", "spice"],
+    img: "pexels-mlkbnl-10251415.jpg",
   },
   {
     name: "Pantano",
@@ -27,6 +29,7 @@ export default [
     weight: 250,
     roast: Roast.Dark,
     flavorNotes: ["nutty", "chocolate", "caramel"],
+    img: "pexels-photo-14385408.webp",
   },
   {
     name: "Letty Bermuzdez Geisha",
@@ -36,6 +39,7 @@ export default [
     weight: 12,
     roast: Roast.Light,
     flavorNotes: ["chocolate", "nutty"],
+    img: "pexels-raymond-petrik-1448389535-28642476.jpg",
   },
   {
     name: "Hacienda Blend",
@@ -45,6 +49,7 @@ export default [
     weight: 12,
     roast: Roast.Medium,
     flavorNotes: ["fruity", "nutty"],
+    img: "pexels-vikeph-17312403.jpg",
   },
   {
     name: "Kirinyaga Peaberry",
