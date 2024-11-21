@@ -1,16 +1,33 @@
 import { CoffeeBean } from "@/types";
 // import CoffeeBeanBag from "caleb-minear-kVAs4SVIxSk-unsplash.jpg";
+import { useState } from "react";
 import { Card, CardContent } from "./ui/card";
 export default function UserBeansSection({ beans }: { beans: CoffeeBean[] }) {
+  const [showOverflowBeans, setShowOverflowBeans] = useState(false);
   return (
     <div className="md:w-1/2">
       <h2>Your Coffee Beans</h2>
       <ul className="flex flex-col gap-4">
-        {beans.map((bean: CoffeeBean) => (
-          <li key={bean.name}>
-            <BeanCard bean={bean} />
-          </li>
-        ))}
+        {beans.map((bean: CoffeeBean, index) =>
+          index < 4 ? (
+            <li key={bean.name}>
+              <BeanCard bean={bean} />
+            </li>
+          ) : showOverflowBeans ? (
+            <li key={bean.name}>
+              <BeanCard bean={bean} />
+            </li>
+          ) : (
+            <li className="overflowBeans" key={bean.name}>
+              <BeanCard bean={bean} />
+            </li>
+          )
+        )}
+        <li>
+          <button onClick={() => setShowOverflowBeans(!showOverflowBeans)}>
+            {showOverflowBeans ? "Show Less" : "Show More"}
+          </button>
+        </li>
       </ul>
     </div>
   );
