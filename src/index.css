@@ -94,6 +94,6 @@ p {
   color: hsl(var(--foreground));
 }
 
-button {
-  background-color: hsl(var(--foreground));
+a {
+  @apply text-accent;
 }
