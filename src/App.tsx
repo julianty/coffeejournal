@@ -8,6 +8,7 @@ import NavigationBar from "./components/NavigationBar";
 import UserBeansSection from "./components/UserBeansSection";
 import UserContext from "./components/UserContextProvider";
 import UserProfile from "./components/UserProfile";
+import { cn } from "./lib/utils";
 import { User } from "./types";
 // const sectionStyle = "mx-0 md:max-w-5xl md:mx-auto p-8 bg-stone-700";
 const sectionStyle = "mx-0 w-full md:max-w-5xl md:mx-auto p-4 my-0 md:my-24";
@@ -64,10 +65,10 @@ function FeaturesSection({ sectionStyle }: { sectionStyle: string }) {
   }
   return (
     <section
-      className={`${sectionStyle}`}
+      className={`${sectionStyle} p-8 md:py-16`}
       style={{ backgroundColor: "hsl(var(--accent-foreground))" }}
     >
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 md:gap-20">
         {feature(
           <IconSparkles />,
           "Get Personalized Recommendations",
@@ -98,19 +99,19 @@ function FrequentAskedQuestionsSection({
     return (
       <div className="flex flex-col gap-3">
         <div className="flex gap-2">
-          <h3 className="font-bold">{question}</h3>
+          <h3 className="font-bold text-xl">{`Q: ${question}`}</h3>
         </div>
-        <p className="pl-6">{answer}</p>
+        <p className="pl-6">{`A: ${answer}`}</p>
       </div>
     );
   }
   return (
-    <section className={`${sectionStyle}`}>
+    <section className={cn(sectionStyle, [""])}>
       <h2>Frequently Asked Questions</h2>
       <p>
         Can't find the answer you're looking for? <a href="#">Contact us.</a>
       </p>
-      <div className="flex flex-col gap-8 mt-4">
+      <div className="flex flex-col gap-8 mt-12 md:gap-16">
         {question(
           "Is the service free to use?",
           "Yes, Coffee Journal is free to use for all users"
