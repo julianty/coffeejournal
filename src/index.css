@@ -101,3 +101,7 @@ a {
 .overflowBeans {
   @apply hidden;
 }
+
+img {
+  image-rendering: crisp-edges;
+}
