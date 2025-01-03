@@ -29,7 +29,7 @@ export default function AddBeanForm({
   });
 
   function handleSubmit(data: CoffeeBean) {
-    setBeanCatalog((prev) => [...prev, data]);
+    setBeanCatalog((prev) => [data, ...prev]);
     console.log("Form submitted");
     console.log(data);
   }

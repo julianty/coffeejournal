@@ -40,7 +40,7 @@ function SignInDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Sign In</Button>
+        <Button>View Demo</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogTitle>Sign In</DialogTitle>
