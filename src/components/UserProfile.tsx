@@ -13,7 +13,7 @@ export default function UserProfile({ sectionStyle }: SectionProps) {
     >
       <img
         id="profile-picture"
-        src="/pexels-olly-3790797.jpg"
+        src="pexels-olly-3790797.jpg"
         alt="profile picture"
         className="w-48 h-48 bg-stone-800 flex justify-center items-center rounded-full object-cover"
       ></img>
@@ -24,17 +24,17 @@ export default function UserProfile({ sectionStyle }: SectionProps) {
         <div className="flex items-center gap-4">
           Following:
           <MiniProfilePicture
-            src="/pexels-anastasia-shuraeva-6608313.jpg"
+            src="pexels-anastasia-shuraeva-6608313.jpg"
             alt="following-1"
             className="bg-stone-800"
           />
           <MiniProfilePicture
-            src="/pexels-chuck-2941565.jpg"
+            src="pexels-chuck-2941565.jpg"
             alt="following-2"
             className="bg-stone-800"
           />
           <MiniProfilePicture
-            src="/pexels-dziana-hasanbekava-7275385.jpg"
+            src="pexels-dziana-hasanbekava-7275385.jpg"
             alt="profile-picture-1"
             className="bg-stone-800"
           />
